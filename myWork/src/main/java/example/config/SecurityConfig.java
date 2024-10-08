@@ -20,13 +20,13 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/hello").authenticated() // 需要身份验证的接口
-                        .anyRequest().permitAll() // 其他接口不需要身份验证
+                        .requestMatchers("/hello").authenticated()
+                        .anyRequest().permitAll()
                 )
-                .formLogin(form -> form // 配置表单登录
+                .formLogin(form -> form 
                         .permitAll()
                 )
-                .logout(logout -> logout // 配置注销
+                .logout(logout -> logout 
                         .permitAll()
                 );
 
